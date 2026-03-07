@@ -1,0 +1,256 @@
+/* Projects Page Specific Styles */
+
+.page-content {
+    min-height: 100vh;
+}
+
+.custom-header {
+    background: linear-gradient(135deg, var(--bg-dark) 0%, rgba(15, 23, 42, 0.9) 100%), url('../assets/images/hero-bg.jpg') center/cover;
+    padding: 10rem 0 6rem;
+    color: white;
+    margin-top: -70px; /* offset navbar */
+}
+
+.custom-header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.custom-header p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Glass Project Cards Grid */
+.projects-grid-page {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 3rem;
+}
+
+.glass-card-project {
+    background: var(--bg-card);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .glass-card-project {
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card-project:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -15px rgba(var(--primary-h), 50%, 50%, 0.3);
+}
+
+.project-thumb {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.glass-card-project:hover .project-thumb img {
+    transform: scale(1.08);
+}
+
+.project-hover-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.glass-card-project:hover .project-hover-overlay {
+    opacity: 1;
+}
+
+.view-gallery-btn {
+    background: var(--color-accent);
+    color: #000;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transform: translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-card-project:hover .view-gallery-btn {
+    transform: translateY(0);
+}
+
+.project-info {
+    padding: 2rem;
+    text-align: center;
+}
+
+.project-info h3 {
+    font-size: 1.4rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.project-info p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Full Screen Carousel Overlay */
+.carousel-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 15, 25, 0.95);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+}
+
+.carousel-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10001;
+    transition: all 0.3s;
+}
+
+.carousel-close:hover {
+    background: var(--color-accent);
+    color: #000;
+    transform: rotate(90deg);
+}
+
+.carousel-header {
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    z-index: 10000;
+}
+
+.carousel-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.carousel-header span {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.carousel-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.carousel-image {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+.carousel-nav:hover {
+    background: var(--color-accent);
+    color: #000;
+}
+
+.nav-prev {
+    left: 2rem;
+}
+
+.nav-next {
+    right: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .custom-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .projects-grid-page {
+        grid-template-columns: 1fr;
+    }
+    
+    .carousel-nav {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .nav-prev { left: 1rem; }
+    .nav-next { right: 1rem; }
+    
+    .carousel-close {
+        top: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-image {
+        max-height: 60vh;
+    }
+}

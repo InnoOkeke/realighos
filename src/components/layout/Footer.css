@@ -1,0 +1,89 @@
+.footer {
+    background-color: var(--bg-card);
+    padding: 4rem 0 1rem;
+    margin-top: auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: flex-end;
+    /* Align text to bottom of logo to form word */
+    margin-bottom: 1rem;
+    text-decoration: none;
+    gap: 0;
+    /* Remove gap to merge R and eal */
+    line-height: 1;
+}
+
+.footer-logo .logo-img {
+    height: 70px;
+    /* Slightly larger R */
+    width: auto;
+    object-fit: contain;
+    margin-right: -5px;
+    /* Pull text slightly closer if needed */
+    margin-bottom: -8px;
+    /* Adjustment for baseline shift */
+}
+
+.footer-logo .logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.footer-section h3 span {
+    color: var(--color-accent);
+}
+
+.footer-section h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+.footer-section p {
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: var(--color-primary);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 1.5rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+[data-theme='dark'] .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
