@@ -8,6 +8,7 @@
 
 .text-center { text-align: center; }
 .bg-light { background-color: var(--bg-off-white); }
+[data-theme='dark'] .bg-light { background-color: var(--bg-dark-card); }
 .bg-dark { background-color: var(--bg-dark); }
 .text-white { color: #ffffff; }
 .mt-4 { margin-top: 2rem; }
@@ -305,6 +306,12 @@
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--text-main);
+}
+
+[data-theme='dark'] .wcu-text h2,
+[data-theme='dark'] .wcu-text p,
+[data-theme='dark'] .wcu-list li {
+    color: #ffffff;
 }
 
 .text-accent {
