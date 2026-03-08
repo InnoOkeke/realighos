@@ -37,7 +37,7 @@ const Footer = () => {
 
             {/* Floating WhatsApp Button */}
             <a 
-                href="https://wa.me/2348037965323"
+                href={`https://wa.me/2348037965323?text=${encodeURIComponent("Hello Real Ighos team! 👋 I was captivated by your projects. I'm ready to turn my vision into a timeless reality and would love to discuss a premium building/investment opportunity. Let's create a masterpiece together!")}`}
                 className="whatsapp-float" 
                 target="_blank" 
                 rel="noopener noreferrer"
