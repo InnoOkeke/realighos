@@ -1,117 +1,240 @@
-/* About Page Styles */
-.about-grid {
+/* About Page Premium Styles */
+
+.about-intro {
+    padding-top: 8rem;
+}
+
+.about-split-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.about-split-text h2 {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    color: var(--text-main);
+}
+
+.lead-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.about-split-text p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.about-features {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 1rem;
 }
 
-@media (min-width: 768px) {
-    .about-grid {
-        grid-template-columns: 1.5fr 1fr;
-        align-items: start;
-    }
-}
-
-.about-text h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: var(--color-primary);
-}
-
-.about-text p {
-    margin-bottom: 1rem;
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 600;
     font-size: 1.1rem;
+    color: var(--text-main);
+    padding: 1rem;
+    background: var(--bg-card);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+[data-theme='dark'] .feature-item {
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.feature-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Collage */
+.about-split-images {
+    position: relative;
+    height: 600px;
+}
+
+.image-collage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.img-main {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 85%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 2rem;
+    z-index: 1;
+}
+
+.img-secondary {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    z-index: 2;
+    border: 10px solid var(--bg-body);
+}
+
+.experience-badge {
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    transform: translateY(-50%);
+    z-index: 3;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-card); /* Fallback */
+}
+
+.experience-badge .years {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.experience-badge .text {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* VMO Section */
+.vmo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.glass-card-dark {
+    background: rgba(30, 41, 59, 0.5); /* Slate 800 with opacity */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem 2rem;
+    border-radius: 1.5rem;
+    transition: all 0.4s ease;
+    height: 100%;
+}
+
+.glass-card-dark:hover {
+    transform: translateY(-10px);
+    background: rgba(30, 41, 59, 0.8);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+    border-color: rgba(var(--accent-h), var(--accent-s), var(--accent-l), 0.5);
+}
+
+.glass-card-dark h3 {
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.glass-card-dark p {
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.7;
 }
 
-.about-stats-grid {
+.glass-card-dark strong {
+    color: var(--color-accent);
+}
+
+/* Team Section */
+.team-intro {
+    max-width: 600px;
+    margin: 0 auto 4rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.team-grid {
     display: grid;
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
 }
 
-.stat-card {
-    background-color: var(--bg-card);
-    padding: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-[data-theme='dark'] .stat-card {
-    border-color: rgba(255, 255, 255, 0.05);
-}
-
-.text-primary {
-    color: var(--color-primary);
-    margin-bottom: 1rem;
-}
-
-/* Contact Page Styles */
-.contact-wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-}
-
-@media (min-width: 768px) {
-    .contact-wrapper {
-        grid-template-columns: 1fr 1.5fr;
-    }
-}
-
-.contact-info {
-    background-color: var(--bg-card);
+.team-card {
     padding: 2rem;
-    border-radius: 1rem;
-}
-
-.contact-item {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
-    align-items: flex-start;
-}
-
-.contact-item h4 {
-    margin-bottom: 0.25rem;
-    color: var(--text-main);
-}
-
-.contact-form {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    align-items: center;
 }
 
-.form-group {
+.team-avatar-placeholder {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary), hsl(var(--primary-h), var(--primary-s), 30%));
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 800;
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 20px -5px rgba(var(--primary-h), 50%, 50%, 0.4);
+    border: 4px solid var(--bg-body);
 }
 
-.form-group label {
-    font-weight: 500;
+.team-info h4 {
+    font-size: 1.25rem;
     color: var(--text-main);
+    margin-bottom: 0.5rem;
 }
 
-.form-group input,
-.form-group textarea {
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: var(--bg-card);
-    color: var(--text-main);
-    font-family: inherit;
-    transition: border-color 0.2s;
+.team-role {
+    font-size: 0.95rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-[data-theme='dark'] .form-group input,
-[data-theme='dark'] .form-group textarea {
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--color-primary);
+/* Responsive */
+@media (max-width: 992px) {
+    .about-split-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-split-images {
+        height: 500px;
+        order: -1;
+    }
+    
+    .experience-badge {
+        left: unset;
+        right: 10%;
+        top: -30px;
+        transform: none;
+    }
 }

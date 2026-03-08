@@ -1,0 +1,26 @@
+/* Services Page Styles */
+
+.services-grid-page {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.h-100 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mt-auto {
+    margin-top: auto;
+}
+
+/* Adjusting the glass card specifically inside the services grid to stretch properly */
+.services-grid-page .glass-card {
+    padding: 2.5rem 2rem;
+}
+
+.services-grid-page .service-link {
+    margin-top: 1.5rem;
+}
