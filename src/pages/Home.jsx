@@ -6,11 +6,11 @@ import CountUp from 'react-countup';
 import './Home.css';
 import project2 from '../assets/images/project2.jpg';
 import project3 from '../assets/images/project3.jpg';
-import heroBg1 from '../assets/images/hero-bg.jpg';
-import heroBg2 from '../assets/images/project1.jpg';
-import heroBg3 from '../assets/images/gift_5bed.jpg';
+import heroBg1 from '../assets/images/hero-bg.webp';
+import heroBg2 from '../assets/projects/INTERIOR FINISHES/WhatsApp Image 2026-01-10 at 12.11.36 AM.webp';
+import heroBg3 from '../assets/projects/CYBER VILE PROJECT LEKKI/1001195449.webp';
 import { ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const imageModules = import.meta.glob('../assets/projects/**/*.{jpg,jpeg,png,webp}', { eager: true });
 
