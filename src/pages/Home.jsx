@@ -6,10 +6,51 @@ import CountUp from 'react-countup';
 import './Home.css';
 import project2 from '../assets/images/project2.jpg';
 import project3 from '../assets/images/project3.jpg';
+import heroBg1 from '../assets/images/hero-bg.jpg';
+import heroBg2 from '../assets/images/project1.jpg';
+import heroBg3 from '../assets/images/gift_5bed.jpg';
+import { ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const imageModules = import.meta.glob('../assets/projects/**/*.{jpg,jpeg,png,webp}', { eager: true });
 
+const slides = [
+    {
+        id: 1,
+        image: heroBg1,
+        title: "Building Your Vision into",
+        gradientText: "Timeless Reality",
+        description: "We don't just build structures—we engineer legacies. Partner with an industry-leading team to transform your boldest architectural dreams into a high-yield, premium reality."
+    },
+    {
+        id: 2,
+        image: heroBg2,
+        title: "Where Innovation Meets",
+        gradientText: "Masterful Craftsmanship",
+        description: "Elevate your standard of living with uncompromising precision. Our world-class civil construction ensures absolute perfection in quality, structural integrity, and breathtaking aesthetics."
+    },
+    {
+        id: 3,
+        image: heroBg3,
+        title: "Unlock Premium Living &",
+        gradientText: "Elite Investments",
+        description: "Step into spaces meticulously designed for the modern visionary. From concept to magnificent completion, we deliver striking developments that maximize both ROI and luxury."
+    }
+];
+
 const Home = () => {
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % slides.length);
+        }, 6000);
+        return () => clearInterval(timer);
+    }, []);
+
+    const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+    const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+
     // For Stats animation Trigger
     const statsRef = useRef(null);
     const statsInView = useInView(statsRef, { once: true, amount: 0.5 });
@@ -52,32 +93,48 @@ const Home = () => {
 
     return (
         <div className="home-page">
-            {/* Premium Hero Section */}
+            {/* Premium Hero Slider Section */}
             <section className="hero-premium">
+                {slides.map((slide, index) => (
+                    <div 
+                        key={slide.id} 
+                        className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
+                        style={{ backgroundImage: `url(${slide.image})` }}
+                    ></div>
+                ))}
+                
                 <div className="hero-overlay"></div>
                 <div className="hero-glass-shapes">
                     <div className="shape shape-1"></div>
                     <div className="shape shape-2"></div>
                 </div>
+
+                <div className="slider-nav">
+                    <button className="nav-btn prev" onClick={prevSlide}>
+                        <ChevronLeft size={32} />
+                    </button>
+                    <button className="nav-btn next" onClick={nextSlide}>
+                        <ChevronRight size={32} />
+                    </button>
+                </div>
                 
                 <motion.div 
-                    className="hero-content container"
+                    key={currentSlide} // Causes re-animation on slide change
+                    className="hero-content container text-center"
                     initial="hidden"
                     animate="visible"
                     variants={staggerContainer}
                 >
-
-                    
                     <motion.h1 variants={fadeIn}>
-                        Building Your Vision into <br/>
-                        <span className="text-gradient">Timeless Reality</span>
+                        {slides[currentSlide].title} <br/>
+                        <span className="text-gradient">{slides[currentSlide].gradientText}</span>
                     </motion.h1>
                     
-                    <motion.p variants={fadeIn}>
-                        Real Ighos Resources Limited is your trusted partner in developing modern residential, commercial properties, and expert civil construction with state-of-the-art amenities.
+                    <motion.p variants={fadeIn} className="hero-desc">
+                        {slides[currentSlide].description}
                     </motion.p>
                     
-                    <motion.div className="hero-actions" variants={fadeIn}>
+                    <motion.div className="hero-actions justify-center" variants={fadeIn}>
                         <Link to="/projects" className="btn btn-primary btn-glow">
                             Explore Our Projects <ArrowRight size={18} style={{ marginLeft: '0.5rem' }} />
                         </Link>
@@ -86,6 +143,16 @@ const Home = () => {
                         </Link>
                     </motion.div>
                 </motion.div>
+
+                {/* Small Scroll Down Arrow */}
+                <div className="scroll-indicator">
+                    <motion.div
+                        animate={{ y: [0, 10, 0] }}
+                        transition={{ repeat: Infinity, duration: 1.5 }}
+                    >
+                        <ChevronDown size={32} className="text-white opacity-70" />
+                    </motion.div>
+                </div>
             </section>
 
             {/* Why Choose Us Section - New */}
