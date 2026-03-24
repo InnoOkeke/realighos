@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Target directory containing the project images
-const DIRECTORY_PATH = path.join(__dirname, '../src/assets/projects');
+const DIRECTORY_PATH = path.join(__dirname, '../src/assets');
 
 // Image extensions to convert
 const TARGET_EXTENSIONS = ['.jpg', '.jpeg', '.png'];

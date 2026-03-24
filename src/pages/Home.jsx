@@ -5,10 +5,10 @@ import { motion, useInView } from 'framer-motion';
 import CountUp from 'react-countup';
 import './Home.css';
 import project2 from '../assets/projects/INTERIOR FINISHES/WhatsApp Image 2026-03-24 at 21.04.36 (1).webp';
-import project3 from '../assets/projects/INTERIOR FINISHES/WhatsApp Image 2026-03-24 at 21.04.36.webp';
+import project3 from '../assets/home5.webp';
 import heroBg1 from '../assets/images/hero-bg.webp';
-import heroBg2 from '../assets/projects/INTERIOR FINISHES/WhatsApp Image 2026-03-24 at 21.04.38 (1).webp';
-import heroBg3 from '../assets/projects/INTERIOR FINISHES/WhatsApp Image 2026-03-24 at 21.04.37 (1).webp';
+import heroBg2 from '../assets/homepage.webp';
+import heroBg3 from '../assets/home2.webp';
 import { ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -99,7 +99,7 @@ const Home = () => {
                     <div 
                         key={slide.id} 
                         className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
-                        style={{ backgroundImage: `url(${slide.image})` }}
+                        style={{ backgroundImage: `url("${slide.image}")` }}
                     ></div>
                 ))}
                 

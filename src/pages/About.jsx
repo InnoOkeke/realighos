@@ -1,7 +1,7 @@
 import { Users, Target, Award, CheckCircle, Shield, Briefcase, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import './About.css';
-import project1 from '../assets/projects/INTERIOR FINISHES/WhatsApp Image 2026-03-24 at 21.04.37 (2).webp';
+import project1 from '../assets/home4.webp';
 import project2 from '../assets/projects/INTERIOR FINISHES/WhatsApp Image 2026-03-24 at 21.04.36.webp';
 
 const About = () => {
