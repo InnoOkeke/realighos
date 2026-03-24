@@ -28,16 +28,7 @@ const About = () => {
         }
     };
 
-    const team = [
-        { name: 'Okeke Innocent', role: 'Director' },
-        { name: 'Edafe Victor', role: 'General Manager' },
-        { name: 'Goodluck Igheya Omoyovwosho', role: 'Managing Partner' },
-        { name: 'Esiesimual Jude', role: 'Head Civil' },
-        { name: 'Jennifer Asiosa Omoyovwosho', role: 'Business Development Executive/Partner' },
-        { name: 'Alex Agheiye Asekhamhe', role: 'Quantity Surveyor' },
-        { name: 'Abiodun Moses Awoyera', role: 'Architect' },
-        { name: 'Alex Igbape', role: 'Structural Engineer' },
-    ];
+    const team = [];
 
     return (
         <div className="page-content bg-light">
@@ -176,7 +167,7 @@ const About = () => {
             {/* Team Section */}
             <section className="section team-section">
                 <div className="container">
-                    <div className="section-header text-center">
+                    <div className="section-header text-center pb-5">
                         <motion.h4 
                             className="section-subtitle"
                             initial={{ opacity: 0, y: 20 }}
@@ -200,29 +191,9 @@ const About = () => {
                             viewport={{ once: true }}
                             transition={{ delay: 0.3 }}
                         >
-                            We have a team of well-experienced and skilled professionals saddled with project responsibility to deliver highly detailed jobs.
+                            Driven by a team of seasoned professionals, we combine deep industry expertise with unwavering passion to turn visionary concepts into breathtaking realities.
                         </motion.p>
                     </div>
-
-                    <motion.div 
-                        className="team-grid"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        variants={staggerContainer}
-                    >
-                        {team.map((member, i) => (
-                            <motion.div key={i} className="team-card glass-card" variants={fadeIn}>
-                                <div className="team-avatar-placeholder">
-                                    {member.name.charAt(0)}
-                                </div>
-                                <div className="team-info">
-                                    <h4>{member.name}</h4>
-                                    <span className="team-role">{member.role}</span>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </motion.div>
                 </div>
             </section>
         </div>
