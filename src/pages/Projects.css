@@ -5,7 +5,7 @@
 }
 
 .custom-header {
-    background: linear-gradient(135deg, var(--bg-dark) 0%, rgba(15, 23, 42, 0.9) 100%), url('../assets/images/hero-bg.jpg') center/cover;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, rgba(15, 23, 42, 0.9) 100%), url('../assets/images/hero-bg.webp') center/cover;
     padding: 10rem 0 6rem;
     color: white;
     margin-top: -70px; /* offset navbar */

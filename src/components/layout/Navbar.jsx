@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/logo.webp';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import './Navbar.css'; // Component specific styles if needed, or stick to global Utility classes
 
