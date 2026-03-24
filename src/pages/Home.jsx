@@ -7,8 +7,8 @@ import './Home.css';
 import project2 from '../assets/projects/INTERIOR FINISHES/WhatsApp Image 2026-03-24 at 21.04.36 (1).webp';
 import project3 from '../assets/projects/INTERIOR FINISHES/WhatsApp Image 2026-03-24 at 21.04.36.webp';
 import heroBg1 from '../assets/images/hero-bg.webp';
-import heroBg2 from '../assets/projects/INTERIOR FINISHES/WhatsApp Image 2026-03-24 at 21.04.37 (1).webp';
-import heroBg3 from '../assets/projects/CYBER VILE PROJECT LEKKI/1001195449.webp';
+import heroBg2 from '../assets/projects/INTERIOR FINISHES/WhatsApp Image 2026-03-24 at 21.04.38 (1).webp';
+import heroBg3 from '../assets/projects/INTERIOR FINISHES/WhatsApp Image 2026-03-24 at 21.04.37 (1).webp';
 import { ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -179,8 +179,8 @@ const Home = () => {
                         
                         <motion.div className="wcu-images" variants={fadeIn}>
                             <div className="img-stack">
-                                <img src={project2} alt="Quality Construction" className="img-front shadow-floating" />
-                                <img src={project3} alt="Modern Architecture" className="img-back" />
+                                <img src={project2} alt="Quality Construction" className="img-front shadow-floating" loading="lazy" />
+                                <img src={project3} alt="Modern Architecture" className="img-back" loading="lazy" />
                             </div>
                         </motion.div>
                     </motion.div>
@@ -267,7 +267,7 @@ const Home = () => {
                         {featuredProjects.map((project) => (
                             <motion.div key={project.id} className="project-card-premium" variants={fadeIn}>
                                 <div className="project-image-wrap">
-                                    <img src={project.thumbnail} alt={project.title} />
+                                    <img src={project.thumbnail} alt={project.title} loading="lazy" />
                                     <div className="project-hover-content">
                                         <div className="cat-badge">Featured</div>
                                         <h4>{project.title}</h4>

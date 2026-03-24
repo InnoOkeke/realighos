@@ -157,6 +157,7 @@ const Projects = () => {
                                 key={currentImageIndex} // Key ensures re-animation on index change
                                 src={selectedProject.images[currentImageIndex]} 
                                 alt={`${selectedProject.title} image ${currentImageIndex + 1}`}
+                                loading="lazy"
                                 className="carousel-image"
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 animate={{ opacity: 1, scale: 1 }}

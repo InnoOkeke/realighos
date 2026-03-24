@@ -1,8 +1,8 @@
 import { Users, Target, Award, CheckCircle, Shield, Briefcase, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import './About.css';
-import project1 from '../assets/images/project1.jpg';
-import project2 from '../assets/images/project2.jpg';
+import project1 from '../assets/projects/INTERIOR FINISHES/WhatsApp Image 2026-03-24 at 21.04.37 (2).webp';
+import project2 from '../assets/projects/INTERIOR FINISHES/WhatsApp Image 2026-03-24 at 21.04.36.webp';
 
 const About = () => {
     const fadeIn = {
@@ -95,8 +95,8 @@ const About = () => {
                             variants={slideInRight}
                         >
                             <div className="image-collage">
-                                <img src={project1} alt="Construction Site" className="img-main shadow-floating" />
-                                <img src={project2} alt="Finished Interior" className="img-secondary" />
+                                <img src={project1} alt="Construction Site" className="img-main shadow-floating" loading="lazy" />
+                                <img src={project2} alt="Finished Interior" className="img-secondary" loading="lazy" />
                                 <div className="experience-badge glass-card">
                                     <span className="years">10+</span>
                                     <span className="text">Years<br/>Experience</span>
@@ -168,28 +168,13 @@ const About = () => {
             <section className="section team-section">
                 <div className="container">
                     <div className="section-header text-center pb-5">
-                        <motion.h4 
-                            className="section-subtitle"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                        >
-                            The People
-                        </motion.h4>
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}
-                        >
-                            Meet Our Experts
-                        </motion.h2>
                         <motion.p
                             className="team-intro text-muted"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.3 }}
+                            style={{ fontSize: '1.2rem', marginTop: '20px' }}
                         >
                             Driven by a team of seasoned professionals, we combine deep industry expertise with unwavering passion to turn visionary concepts into breathtaking realities.
                         </motion.p>
