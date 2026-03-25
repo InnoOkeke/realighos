@@ -27,10 +27,10 @@ const Footer = () => {
                 <div className="footer-section">
                     <h4>Follow Us</h4>
                     <div className="social-links">
-                        <a href="#" aria-label="Facebook"><Facebook size={20} /></a>
+                        <a href="https://www.facebook.com/share/18CzJKTpWz/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><Facebook size={20} /></a>
                         <a href="#" aria-label="Twitter"><Twitter size={20} /></a>
                         <a href="https://instagram.com/Realighos38" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram size={20} /></a>
-                        <a href="#" aria-label="LinkedIn"><Linkedin size={20} /></a>
+                        <a href="https://www.linkedin.com/company/real-ighos-resources-limited/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={20} /></a>
                     </div>
                 </div>
             </div>
